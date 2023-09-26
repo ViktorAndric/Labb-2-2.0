@@ -8,26 +8,29 @@ namespace Labb_2_2._0
 {
     internal class CartItem
     {
-        List<Product> items = new List<Product>();
-
         
-
-        public override string ToString()
-        {
-            return ($"{items.Count} st, {items.First().Name}, {items.First().Price}, total: {items.Sum(x => x.Price)}");
+        public Product ProductItem
+        { 
+            get; 
+            private set; 
         }
+        public int quantity { get; set;} = 0;
+        public double totalItem = 0;
+        public  override string ToString()
+        {
+            return ($"{quantity} st\t {ProductItem.Name}\t{ProductItem.Price}\ttotal: {ProductItem.Price * quantity}");  
+        }
+
         public bool MatchingItems(string item)
         {
-             return items.First().Equals(item);
+            return this.ProductItem.Name.Equals(item);
         }
 
-        public void AddItem(Product item)
+        public CartItem(Product item, int Quantity)
         {
-            items.Add(item);
+            this.ProductItem = item;
+            quantity = Quantity;
         }
-
-       
-
-
+        
     }
 }
