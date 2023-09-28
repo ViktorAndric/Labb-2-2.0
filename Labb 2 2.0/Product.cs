@@ -17,7 +17,6 @@ namespace Labb_2_2._0
             Price = price;           
         }
 
-
         public static void Currencies(double price)
         {
             double pund = price / 13.85;
@@ -42,7 +41,6 @@ namespace Labb_2_2._0
                     Console.WriteLine($"Total price is: {Math.Round(dollar, 2)} $");
                     break;
             }
-            
 
         }
     }

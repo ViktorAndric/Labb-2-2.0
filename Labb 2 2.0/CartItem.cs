@@ -8,17 +8,12 @@ namespace Labb_2_2._0
 {
     internal class CartItem
     {
-        
-        public Product ProductItem
-        { 
-            get; 
-            private set; 
-        }
+        public Product ProductItem{ get; private set; }
         public int quantity { get; set;} = 0;
         public double totalItem = 0;
-        public  override string ToString()
+        public override string ToString()
         {
-            return ($"{quantity} st\t {ProductItem.Name}\t{ProductItem.Price}\ttotal: {ProductItem.Price * quantity}");  
+            return $"{quantity} st\t {ProductItem.Name} \t{ProductItem.Price} \ttotal: {ProductItem.Price * quantity}";  
         }
 
         public bool MatchingItems(string item)

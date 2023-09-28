@@ -12,13 +12,12 @@ namespace Labb_2_2._0
         public string Password { get; private set; }
         private List<CartItem> _cart;
         public List<CartItem> Cart { get { return _cart; } }
-       
+
         public User(string name, string password)
         {
             Name = name;
             Password = password;
             _cart = new List<CartItem>();
         }
-
     }
 }

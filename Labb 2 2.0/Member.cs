@@ -1,31 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO.Enumeration;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Labb_2_2._0
 {
-    internal class RewardSystem //: User
+    internal class Member : User
     {
         public enum Level
         {
             Bronze,
             Silver,
-            Gold,
+            Gold
         }
-        
+
         private Level RewardLevel { get; set; }
-        
-
-        public RewardSystem(Level rewardlevel) 
+        public Member(string name, string password, Level rewardlevel): base(name, password)
         {
-            Level Rewardlevel = rewardlevel;
+            RewardLevel = rewardlevel;   
         }
-
-        public double DecideBonusLevel()
+        
+        public override string ToString()
         {
-            double discount = 0;
+            return $"{Name}\n{Password}\n{RewardLevel}\n*******************";
+        }
+        public double DecideBonusLevel(double price)
+        {
+            double discount = 1.0;
 
             switch(RewardLevel)
             {
@@ -39,7 +43,9 @@ namespace Labb_2_2._0
                     discount = 0.85;
                     break;
             }
-            return discount;
+           return discount * price;
         }
+        
+        
     }
 }
