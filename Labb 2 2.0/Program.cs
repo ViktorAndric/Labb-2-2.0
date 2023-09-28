@@ -102,16 +102,17 @@ namespace Labb_2_2._0
             Console.Clear();
             Console.Write("CHOOSE A USERNAME: ");
             string usernameInput = Console.ReadLine();
+            
             Console.Write("CHOOSE A PASSWORD: ");
             string passwordInput = Console.ReadLine();
-            Member.Level level = Member.Level.Bronze;
+            
             Console.WriteLine("Choose a memberlevel:");
             Console.WriteLine("1. Gold");
             Console.WriteLine("2. Silver");
             Console.WriteLine("3. Bronze");
             string levelInput = Console.ReadLine();
-            
-            
+
+            Member.Level level = Member.Level.Bronze;            
             Member? user = users.FirstOrDefault(u => u.Name == usernameInput);
             if (user == null)
             {

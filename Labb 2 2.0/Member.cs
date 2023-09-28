@@ -45,7 +45,5 @@ namespace Labb_2_2._0
             }
            return discount * price;
         }
-        
-        
     }
 }
