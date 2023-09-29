@@ -146,7 +146,7 @@ namespace Labb_2_2._0
             {
                 Member newMember = new Member(usernameInput, passwordInput, level);
 
-                string fileName = "C:\\Users\\Min Dator\\source\\repos\\Labb 2 2.0\\Users.txt"; 
+                string fileName = "Users.txt"; 
                 File.AppendAllText(fileName, $"{usernameInput},{passwordInput},{level}\n");
                 users.Add(newMember);
             }
@@ -339,7 +339,7 @@ namespace Labb_2_2._0
         }
         public static void LoadUsers()
         {
-            string fileName = "C:\\Users\\Min Dator\\source\\repos\\Labb 2 2.0\\Users.txt";
+            string fileName = "Users.txt";
             List<string> acounts = File.ReadAllLines(fileName).ToList();
 
             foreach(var acount in acounts)
